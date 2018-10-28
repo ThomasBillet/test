@@ -6,4 +6,8 @@ import javax.ejb.Stateless;
 @Stateless
 @LocalBean
 public class WorkActivityService {
+    
+    
+    
+    
 }

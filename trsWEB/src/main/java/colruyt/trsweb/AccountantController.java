@@ -8,7 +8,6 @@ import javax.ws.rs.core.Response;
 
 
 @Path("/accountant")
-@JWTTokenNeeded
 public class AccountantController {
 
 

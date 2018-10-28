@@ -2,8 +2,8 @@ package colruyt.trsEJB.facades;
 
 import colruyt.trsEJB.bo.PersonBo;
 import colruyt.trsEJB.bo.ProjectBo;
+import colruyt.trsEJB.converters.PersonBoConverter;
 import colruyt.trsEJB.services.bl.ActivityService;
-import colruyt.trsEJB.services.bl.PersonService;
 import colruyt.trsEJB.services.bl.TimePunchService;
 import colruyt.trsEJB.util.exceptions.OutsideWorkdayTimeBoundariesException;
 import org.apache.logging.log4j.LogManager;
@@ -27,6 +27,8 @@ public class PunchClockFacadeImpl implements PunchClockFacade {
 
     @EJB
     private ActivityService activityService;
+    
+    private PersonBoConverter conv = new PersonBoConverter();
 
     /* CONSTRUCTORS */
 
@@ -53,7 +55,7 @@ public class PunchClockFacadeImpl implements PunchClockFacade {
 
     @Override
     public void punch(PersonBo personBo) {
-        timePunchService.punch(personBo);
+        timePunchService.punch(conv.convertTo(personBo));
     }
 
 }

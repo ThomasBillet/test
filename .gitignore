@@ -1,3 +1,5 @@
 .idea/
 .gradle/
 gradle
+/.nb-gradle/
+/trsWEB/build/

@@ -16,7 +16,7 @@ public class TimePunchBo extends BaseBo {
             punch.toLocalTime(), person.getPersId()
         );
 
-        this.punch = this.punch;
+        this.punch = punch;
         this.person = person;
     }
     /* GETTERS & SETTERS */
