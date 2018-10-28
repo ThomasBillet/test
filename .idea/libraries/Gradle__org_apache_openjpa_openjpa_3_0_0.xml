@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.openjpa:openjpa:3.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.openjpa/openjpa/3.0.0/78103ce0316ccc67316e6cdcb35acc0e6da88904/openjpa-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.openjpa/openjpa/3.0.0/1eb5c92c3fd835c6678095ae0f63d3359f4ef4b8/openjpa-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
