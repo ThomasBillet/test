@@ -21,21 +21,22 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.jwt:1.0.15" level="project" />
     <orderEntry type="library" name="Gradle: org.primefaces:primefaces:6.2" level="project" />
     <orderEntry type="library" name="Gradle: :webstyle-2.0-2.0.0.6:" level="project" />
     <orderEntry type="library" name="Gradle: :webutillib-4.0.0.6:" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.openjpa:openjpa:2.2.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-pool:commons-pool:1.5.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-lang:commons-lang:2.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: net.sourceforge.serp:serp:1.14.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: junit:junit:3.8.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: asm:asm:3.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-lang:commons-lang:2.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: junit:junit:3.8.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.xml.stream:stax-api:1.0-2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.jms:javax.jms-api:2.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: javax:javaee-api:6.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.openjpa:openjpa:2.2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-pool:commons-pool:1.5.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: net.sourceforge.serp:serp:1.14.1" level="project" />
   </component>
 </module>

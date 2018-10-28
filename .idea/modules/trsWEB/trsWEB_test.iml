@@ -10,6 +10,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="trsWEB_main" />
+    <orderEntry type="library" name="Gradle: com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.jwt:1.0.15" level="project" />
     <orderEntry type="library" name="Gradle: org.primefaces:primefaces:6.2" level="project" />
     <orderEntry type="library" name="Gradle: :webstyle-2.0-2.0.0.6:" level="project" />
     <orderEntry type="library" name="Gradle: :webutillib-4.0.0.6:" level="project" />
