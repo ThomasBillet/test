@@ -10,14 +10,10 @@ import org.apache.logging.log4j.Logger;
 import javax.ejb.Stateless;
 import java.time.LocalDateTime;
 
-
-
 @Stateless
 public class ActivityService {
 
     protected static final Logger LOGGER = LogManager.getLogger( ActivityService.class.getName() );
-
-
 
     private WorkActivityDlService workActivityDlService;
 

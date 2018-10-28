@@ -1,26 +1,11 @@
 package colruyt.trsEJB.facades;
 
 import colruyt.trsEJB.bo.PersonBo;
-import colruyt.trsEJB.services.bl.PersonService;
 
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
 import java.util.Optional;
 
-@Stateless
-@LocalBean
-public class PeopleFacade {
+public interface PeopleFacade {
 
-    @EJB
-    private PersonService personService;
-
-    Optional<PersonBo> getByPersID(String persID){
-
-        return Optional.ofNullable( personService.getByPersID( persID) );
-
-    }
-
-
+    Optional<PersonBo> getByPersID(String persID);
 
 }

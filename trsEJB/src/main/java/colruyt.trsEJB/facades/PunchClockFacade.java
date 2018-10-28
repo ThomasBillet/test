@@ -6,7 +6,6 @@ import colruyt.trsEJB.util.exceptions.OutsideWorkdayTimeBoundariesException;
 
 import java.time.LocalDateTime;
 
-
 public interface PunchClockFacade {
 
     void registerActivity(
