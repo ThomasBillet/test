@@ -2,7 +2,6 @@ package colruyt.trsEJB.facades;
 
 import colruyt.trsEJB.bo.PersonBo;
 import colruyt.trsEJB.bo.ProjectBo;
-
 import colruyt.trsEJB.util.exceptions.CredentialNotFoundException;
 import colruyt.trsEJB.util.exceptions.OutsideWorkdayTimeBoundariesException;
 
@@ -17,7 +16,9 @@ public interface PunchClockFacade {
 
     void punch(String persId, String password) throws CredentialNotFoundException;
 
-    PersonBo authenticate(String persId, String password) throws CredentialNotFoundException;
+    void punch(PersonBo) throws CredentialNotFoundException;
 
-    PersonBo getAuthenticatedPerson() throws CredentialNotFoundException;
+    // PersonBo authenticate(String persId, String password) throws CredentialNotFoundException;
+
+    // PersonBo getAuthenticatedPerson() throws CredentialNotFoundException;
 }
