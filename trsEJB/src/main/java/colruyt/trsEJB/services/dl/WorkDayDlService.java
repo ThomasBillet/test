@@ -5,7 +5,9 @@
  */
 package colruyt.trsEJB.services.dl;
 
+import colruyt.trsEJB.entities.Person;
 import colruyt.trsEJB.entities.WorkDay;
+import colruyt.trsEJB.services.dl.BaseDlService;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
@@ -29,20 +31,41 @@ public class WorkDayDlService extends BaseDlService<WorkDay>{
     public List<WorkDay> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
+    public Optional<WorkDay> getCurrentWorkDayFor(Person p){
+        
+        //Where Date = Today && User = p
+       return Optional.ofNullable((WorkDay) this.getEntityManager().createNamedQuery("Select p from WorkDay p where p.PID = ?").setParameter("person", p).getResultList().get(0)
+        
+        );
+    }
 
     @Override
     public void save(WorkDay t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           executeInsideTransaction(
+                entityManager -> entityManager.persist(t)
+
+              );
+            
     }
 
     @Override
     public void update(WorkDay t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   executeInsideTransaction(
+                entityManager -> entityManager.merge(t)
+
+              );
+                }
 
     @Override
     public void delete(WorkDay t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+               executeInsideTransaction(
+                entityManager -> entityManager.remove(t)
+
+              );
+            
     }
     
 }

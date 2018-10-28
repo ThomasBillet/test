@@ -1,5 +1,6 @@
 package colruyt.trsEJB.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,11 +29,16 @@ public class WorkDay{
 
     /* CONSTRUCTORS */
 
-    public WorkDay(TimePunch startPunch, TimePunch endPunch, List <WorkActivity> dayActivities) {
+    public WorkDay(List <WorkActivity> dayActivities) {
       
-        this.startPunch = startPunch;
-        this.endPunch = endPunch;
+    
         this.dayActivities = dayActivities;
+    }
+    
+     public WorkDay() {
+      
+    
+        this.dayActivities = new ArrayList<WorkActivity>();
     }
 
     /* GETTERS & SETTERS */

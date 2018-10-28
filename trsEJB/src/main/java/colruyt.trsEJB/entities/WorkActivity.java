@@ -31,6 +31,11 @@ public class WorkActivity {
         this.workDescription = workDescription;
     }
 
+    public WorkActivity() {
+    }
+    
+    
+
     /* GETTERS & SETTERS */
 
     public LocalDateTime getStart() {

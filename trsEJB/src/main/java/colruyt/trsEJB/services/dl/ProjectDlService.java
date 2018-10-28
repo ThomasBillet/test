@@ -6,6 +6,8 @@
 package colruyt.trsEJB.services.dl;
 
 import colruyt.trsEJB.entities.Project;
+import colruyt.trsEJB.services.dl.BaseDlService;
+import colruyt.trsEJB.services.dl.BaseDlService;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +33,7 @@ public class ProjectDlService extends BaseDlService<Project>{
             this.getEntityManager().getTransaction().commit();
             this.getEntityManager().close();
             
-         return Optional.of(p);
+         return Optional.ofNullable(p);
             
         }catch(Exception e){
             throw e;
@@ -73,69 +75,34 @@ public class ProjectDlService extends BaseDlService<Project>{
 
     @Override
     public void save(Project t) {
-         try{
-            
-            this.getEntityManager().getTransaction().begin();
-            this.getEntityManager().merge(t);
-            this.getEntityManager().getTransaction().commit();
-            this.getEntityManager().close();
-            
-         
-            
-        }catch(Exception e){
-            throw e;
-            
-        }
-        finally{
-            this.getEntityManager().getTransaction().rollback();
-      
-            
-        }
+       
+             executeInsideTransaction(
+                entityManager -> entityManager.persist(t)
+                 
+
+              );
     }
 
     @Override
     public void update(Project t) {
-           try{
-            
-            this.getEntityManager().getTransaction().begin();
-            this.getEntityManager().persist(t);
-            this.getEntityManager().getTransaction().commit();
-            this.getEntityManager().close();
-            
-         
-            
-        }catch(Exception e){
-            throw e;
-            
-        }
-        finally{
-            this.getEntityManager().getTransaction().rollback();
       
+        executeInsideTransaction(
+                entityManager -> entityManager.merge(t)
+                 
+
+              );
             
-        }
     }
 
     @Override
     public void delete(Project t) {
         
-         try{
+         executeInsideTransaction(
+                entityManager -> entityManager.remove(t)
+                 
+
+              );
             
-            this.getEntityManager().getTransaction().begin();
-            this.getEntityManager().remove(t);
-            this.getEntityManager().getTransaction().commit();
-            this.getEntityManager().close();
-            
-         
-            
-        }catch(Exception e){
-            throw e;
-            
-        }
-        finally{
-            this.getEntityManager().getTransaction().rollback();
-      
-            
-        }
 
     }
 

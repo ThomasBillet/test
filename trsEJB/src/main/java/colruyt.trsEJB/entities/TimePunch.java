@@ -13,6 +13,24 @@ import javax.persistence.Table;
 public class TimePunch  {
 
     private LocalDateTime punch;
+    
+    private Project project;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     private Person person;
     
