@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 import java.time.LocalDateTime;
 
 
+
 @Stateless
 public class ActivityService {
 
@@ -20,9 +21,27 @@ public class ActivityService {
 
     private WorkActivityDlService workActivityDlService;
 
+    public static ActivityService getService() {
+        LOGGER.traceEntry("getService()");
 
+        // singleton
+        if (service == null) {
+            service = new ActivityService();
+        }
 
+        LOGGER.traceExit("getService() with: {}", service.getClass().getName());
+        return service;
+    }
 
+    public void create (
+            LocalDateTime start, LocalDateTime end,
+            String activity, ProjectBo project,
+            PersonBo authenticatedPerson
+    ) throws OutsideWorkdayTimeBoundariesException {
+        LOGGER.traceEntry(
+                "create( start: {}, end: {}, activity: {}, project: {}, persID: {}",
+                start, end, activity, project.getName(), authenticatedPerson.getPersId()
+        );
 
         // validate activity start & end (date/time) boundaries
         if(true){

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="TRS">
+  <!-- Enable features -->
+  <featureManager>
+    <feature>javaee-8.0</feature>
+    <feature>localConnector-1.0</feature>
+    <feature>adminCenter-1.0</feature>
+  </featureManager>
+  <remoteFileAccess>
+    <writeDir>${server.config.dir}</writeDir>
+  </remoteFileAccess>
+  <basicRegistry id="basic">
+    <user name="admin" password="admin" />
+    <user name="nadmin" password="admin" />
+  </basicRegistry>
+  <administrator-role>
+    <user>admin</user>
+  </administrator-role>
+  <!-- Automatically expand WAR files and EAR files -->
+  <applicationManager autoExpand="true" />
+  <applicationMonitor updateTrigger="mbean" />
+  <keyStore id="defaultKeyStore" password="yourpassword" />
+  <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+  <httpEndpoint id="defaultHttpEndpoint" httpPort="9080" httpsPort="9443" />
+  <!--  JDBC Driver and Datasource Config -->
+  <dataSource jndiName="jdbc/tbs2" transactional="true">
+    <jdbcDriver libraryRef="MySQLLib" />
+    <properties databaseName="tbs2" serverName="localhost" portNumber="3306" user="tbs2" password="tbs2" />
+  </dataSource>
+  <library id="MySQLLib">
+    <fileset dir="${shared.resource.dir}/mysql" includes="*.jar" id="mysql" />
+  </library>
+  <application id="TRS" location="C:\dev\d\trsEAR\build\libs\trsEAR-1.0-SNAPSHOT.ear" name="TRS" type="ear" />
+  <application id="Gradle___colruyt___trsEAR_1_0_SNAPSHOT_ear" location="C:\dev\d\trsEAR\build\libs\trsEAR-1.0-SNAPSHOT.ear" name="Gradle___colruyt___trsEAR_1_0_SNAPSHOT_ear" type="ear" />
+</server>
+
