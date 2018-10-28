@@ -2,6 +2,8 @@ package colruyt.trsEJB.facades;
 
 import colruyt.trsEJB.bo.ProjectBo;
 
+
+
 public class ProjectsFacadeImpl implements ProjectsFacade {
 
     @Override
