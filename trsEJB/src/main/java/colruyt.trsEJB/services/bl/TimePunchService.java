@@ -3,28 +3,22 @@ package colruyt.trsEJB.services.bl;
 import colruyt.trsEJB.bo.PersonBo;
 import colruyt.trsEJB.services.dl.TimePunchDlService;
 
+import javax.ejb.EJB;
 
 
 public class TimePunchService {
 
     /* SERVICES */
 
+    @EJB
     private TimePunchService service;
 
+    @EJB
     private TimePunchDlService dlService;
 
     /* API */
 
-    public static TimePunchService getService() {
-
-        if (service == null) {
-            service = new TimePunchService();
-        }
-
-        return service;
-    }
-
     public void punch(PersonBo person) {
-        // TODO: 2implement => write 2 data layer
+        dlService.punch(person);
     }
 }
