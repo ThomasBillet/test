@@ -7,7 +7,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-Path("/accountant")
+@Path("/accountant")
+@JWTTokenNeeded
 public class AccountantController {
 
 
