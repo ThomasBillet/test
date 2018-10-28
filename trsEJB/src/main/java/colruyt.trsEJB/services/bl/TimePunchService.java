@@ -3,13 +3,15 @@ package colruyt.trsEJB.services.bl;
 import colruyt.trsEJB.bo.PersonBo;
 import colruyt.trsEJB.services.dl.TimePunchDlService;
 
+
+
 public class TimePunchService {
 
     /* SERVICES */
 
-    private static TimePunchService service;
+    private TimePunchService service;
 
-    private static TimePunchDlService dlService;
+    private TimePunchDlService dlService;
 
     /* API */
 

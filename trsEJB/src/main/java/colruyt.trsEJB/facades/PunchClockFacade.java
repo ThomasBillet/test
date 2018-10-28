@@ -17,7 +17,10 @@ public interface PunchClockFacade {
 
     void punch(String persId, String password) throws CredentialNotFoundException;
 
+    void punch(PersonBo personBo) throws CredentialNotFoundException;
+
     PersonBo authenticate(String persId, String password) throws CredentialNotFoundException;
 
     PersonBo getAuthenticatedPerson() throws CredentialNotFoundException;
+
 }

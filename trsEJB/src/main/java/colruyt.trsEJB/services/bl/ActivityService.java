@@ -21,18 +21,6 @@ public class ActivityService {
 
     private WorkActivityDlService workActivityDlService;
 
-    public static ActivityService getService() {
-        LOGGER.traceEntry("getService()");
-
-        // singleton
-        if (service == null) {
-            service = new ActivityService();
-        }
-
-        LOGGER.traceExit("getService() with: {}", service.getClass().getName());
-        return service;
-    }
-
     public void create (
             LocalDateTime start, LocalDateTime end,
             String activity, ProjectBo project,

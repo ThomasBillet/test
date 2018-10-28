@@ -3,11 +3,13 @@ package colruyt.trsEJB.services.dl;
 
 import colruyt.trsEJB.entities.Person;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
 
+@Stateless
 public class PersonDlService extends BaseDlService<Person> implements IBaseDlService<Person> {
 	
 	private enum Queries {

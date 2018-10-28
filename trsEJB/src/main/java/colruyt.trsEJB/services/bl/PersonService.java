@@ -6,27 +6,18 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
+
+
+
 public class PersonService {
 
     private static final Logger LOGGER = LogManager.getLogger( PersonService.class.getName() );
 
-    private static PersonBo dummyP = new PersonBo("user","password");
+    private PersonBo dummyP = new PersonBo("user","password");
 
-    private static PersonService service;
+
 
     public PersonService() { LOGGER.trace("Service constructed");  }
-
-    public static PersonService getService() {
-        LOGGER.traceEntry("getService()");
-
-        // singleton
-        if (service == null) {
-            service = new PersonService();
-        }
-
-        LOGGER.traceExit("getService() with: {}", service.getClass().getName());
-        return service;
-    }
 
     public Optional<PersonBo> getByCredentials(String persId, String password) {
 
