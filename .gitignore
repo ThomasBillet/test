@@ -3,3 +3,4 @@
 gradle
 /.nb-gradle/
 /trsWEB/build/
+/trsEJB/build/

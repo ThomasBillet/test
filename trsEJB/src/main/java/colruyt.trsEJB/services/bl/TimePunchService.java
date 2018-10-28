@@ -14,15 +14,7 @@ import javax.ejb.EJB;
 
 
 public class TimePunchService {
-
-    /* SERVICES */
-    
-   //Niveau Up
-   // private PersonBoConverter personConverter = new PersonBoConverter();
-
-    @EJB
-    private TimePunchDlService dlService;
-    
+   
     @EJB
     private WorkDayDlService workDl;
     
@@ -34,13 +26,12 @@ public class TimePunchService {
         this.addToWorkActivity(new TimePunch(LocalDateTime.now(),person));
         
     }
-    
-    
-    
+
     private void addToWorkActivity(TimePunch p) {
-        
-       WorkDay day = this.getWorkingDayFor(p.getPerson());
         //Kijk of de working day al een Project van dit heeft met een lege ending
+        // Anders gaan we deze Deze aanmaken
+       WorkDay day = this.getWorkingDayFor(p.getPerson());
+        
        WorkActivity wa = day.getDayActivities().stream().filter(x-> x.getProject().equals(p.getProject()) && x.getStop() == null ).collect(Collectors.toList()).get(0);
        if(wa != null){
            wa.setStop(p.getPunch());
@@ -58,7 +49,7 @@ public class TimePunchService {
     }
     
     private WorkDay getWorkingDayFor(Person P){
-        
+        // Kijk of er voor vandaag al een workday is aangemaakt anders aanmaken -->
         Optional<WorkDay> day = workDl.getCurrentWorkDayFor(P);
         if(day.isPresent()){
             return day.get();

@@ -11,6 +11,7 @@ import colruyt.trsEJB.services.dl.BaseDlService;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  *
@@ -35,10 +36,22 @@ public class WorkDayDlService extends BaseDlService<WorkDay>{
     
     public Optional<WorkDay> getCurrentWorkDayFor(Person p){
         
-        //Where Date = Today && User = p
-       return Optional.ofNullable((WorkDay) this.getEntityManager().createNamedQuery("Select p from WorkDay p where p.PID = ?").setParameter("person", p).getResultList().get(0)
+        //TODO: Date = Today && User = p
+       return Optional.ofNullable((WorkDay) this.getEntityManager().createNamedQuery("Select wd from WorkDay wd where p.person = :person")
+                                                                    .setParameter("person", p)
+                                                                     .getSingleResult()
+       
         
         );
+    }
+    
+    public Optional<List<WorkDay>> getWorkDaysFor(Person p){
+        
+         return Optional.ofNullable((List<WorkDay>) this.getEntityManager().createNamedQuery("Select wd from WorkDay wd where p.person = :person")
+                                                                    .setParameter("person", p)
+                                                                     .getResultList()
+                                    );
+        
     }
 
     @Override
