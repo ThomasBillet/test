@@ -1,0 +1,6 @@
+#appMenu, #appHeader {
+	display: none!important;
+}
+#appContentPanel {
+	height: auto!important;
+}

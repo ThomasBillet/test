@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/layout/applicationLayout.xhtml">
+
+	<ui:define name="pageContent">
+		<h:form id="sessionContextFormId">
+			<div class="screenTitle">
+				<h4 class="screen-header">
+					<h:outputFormat value="#{webutillibmsgs['title.LanguageLocation'] }" />
+				</h4>
+			</div>
+			<div>
+			<div style="float:left;">
+				<div style="float:left;padding-top: 2%;"><h:outputText id="langLabel" value="#{webutillibmsgs.language }:"/></div>
+				<div><h:selectOneRadio id="languageId" layout="pageDirection" value="#{sessionContext.language }" > 
+		   				<f:selectItems value="#{sessionContext.supportedLanguagesMap}" />
+					</h:selectOneRadio>
+				</div>
+			</div>
+			<div style="float:left;padding-left:50px;height:2px;"></div>
+			<div style="float:left;">
+				<div style="float:left;padding-top: 2%;"><h:outputText id="locLabel" value="#{webutillibmsgs.location }:"/></div>
+				<div style="float:left;">
+				<h:panelGroup id="locationMgmt" layout="block">
+					<h:selectOneRadio id="locationId" layout="pageDirection" value="#{sessionContext.location }"> 
+		   				<f:selectItem itemValue="central" itemLabel="#{webutillibmsgs.central }"  /> 
+		   				<f:selectItem itemValue="store" itemLabel="#{webutillibmsgs.store }" /> 
+		   				<f:ajax render="locationMgmt storeIdInput" />
+					</h:selectOneRadio>
+				 </h:panelGroup>
+				 </div>
+				<div style="float:left;padding-top:14%;">
+					<h:panelGroup id="storeIdInput" layout="block">
+						<h:inputText id ="storeNumberID" value="#{sessionContext.storeNumber }" size="5" maxlength="5"
+					 		disabled="#{sessionContext.location  == 'central'}"  required="true" requiredMessage="#{webutillibmsgs.requiredField }">
+					 	</h:inputText>
+					 	<h:message for="storeNumberID" style="color:red" />
+					</h:panelGroup>
+					<div style="padding-top:16%;">	<h:commandButton value="#{webutillibmsgs.save }"
+							action="#{sessionContext.requestSave}" style="width:8em;" id="persistButtonId"/>
+					</div>
+					</div>
+					</div>
+				</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

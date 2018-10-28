@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+
+body .primary-button {
+	height: calc(2.75rem -     2px);
+	padding: 0rem 2.5rem;
+}
+
+body .secondary-button {
+	height: calc(2.75rem -     2px);
+	padding: 0rem 2.5rem;
+}
+
+.hasDatepicker {
+	background-image: url("#{resource['images/calendar.png']}") !important;
+	background-repeat: no-repeat !important;
+	background-position-x: 8.2rem !important;
+	 background-position-x: right !important; 
+	/*background-position-y: center !important;*/
+}
+
+body :-ms-input-placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	opacity: 1;
+}
+
+
+body .ui-button-text-icon-left.ui-button .ui-icon{
+  left:30% !important
+  }
+  

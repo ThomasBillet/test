@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="layout/appLayout.xhtml" xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="salesForecastPageContent">
+
+        <div class="container">
+            <div class="row mt-3">
+                <div class="screenTitle">
+                    <h4>AppInfo</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">Version</div>
+                <div class="col-3"><p:outputLabel value="#{appInfoBean.getValue('Implementation-Version')}"/></div>
+            </div>
+            <div class="row">
+                <div class="col-3">Built-On</div>
+                <div class="col-3"><p:outputLabel value="#{appInfoBean.getValue('Built-On')}"/></div>
+            </div>
+
+
+        </div>
+
+    </ui:define>
+</ui:composition>

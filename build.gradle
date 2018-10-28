@@ -1,0 +1,34 @@
+plugins {
+    id 'ear'
+}
+
+group 'colruyt'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // The following dependencies will be the ear modules and
+    // will be placed in the ear root
+    // deploy project(':war')
+    deploy project(path: ':trsWEB')
+    deploy project(path: ':trsEJB')
+
+}
+
+ear {
+    appDirName 'src/main/app'  // use application metadata found in this folder
+    // put dependent libraries into APP-INF/lib inside the generated EAR
+    libDirName 'APP-INF/lib'
+    deploymentDescriptor {  // custom entries for application.xml:
+        applicationName = "TRS"
+        displayName = "TRS EAR"
+        initializeInOrder = true
+        securityRole "default"
+
+        // datasource 'java:app/env/jdbc/ora_scord001', 'jdbc/scorwcsmw_ora_scord001_default', [multiDeployed: false]
+    }
+}
+

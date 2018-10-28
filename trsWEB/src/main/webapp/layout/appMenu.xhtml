@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ul>
+	
+		<li class="#{view.viewId.contains('dashboard') ? 'c-active' : ''}">
+			<h:link value="#{msgs['menu.start']}" outcome="/dashboard.xhtml" />
+		</li>
+		<li class="#{view.viewId.contains('create') ? 'c-active' : ''}">
+			<h:link value="#{msgs['menu.create']}" outcome="/create.xhtml" />
+		</li>
+		<li class="#{view.viewId.contains('search') ? 'c-active' : ''}">
+			<h:link value="#{msgs['menu.search']}" outcome="/search.xhtml" />
+		</li>
+		
+		<li>
+			<div>#{msgs['menu.search']}</div>
+			<ul>
+				<li class="#{request.getParameter('target') == 'reslay' ? 'c-active' : ''}">
+					<h:link value="#{msgs['menu.search.article']}" outcome="/responsiveLayout?target=reslay" />
+				</li>
+				<li class="#{request.getParameter('target') == 'catlist' ? 'c-active' : ''}">
+					<h:link value="Category List" outcome="/categoryList?target=catlist" />
+				</li>
+				<li class="#{request.getParameter('target') == 'search' ? 'c-active' : ''}">
+					<h:link value="SEARCH ARTIST" outcome="/searchArtist?target=search" />
+				</li>
+			<!-- 	<li class="#{request.getParameter('target') == 'roundcluster' ? 'c-active' : ''}">
+					<h:link value="#{msgs['menu.round']}" outcome="/general/remote?target=roundcluster" />
+				</li>
+				<li class="#{request.getParameter('target') == 'prio' ? 'c-active' : ''}">
+					<h:link value="#{msgs['menu.prio']}" outcome="/general/remote?target=prio" />
+				</li> -->
+			</ul>		
+		</li>
+	
+	</ul>
+
+</ui:composition>
