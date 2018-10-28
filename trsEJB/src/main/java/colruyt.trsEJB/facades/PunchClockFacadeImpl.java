@@ -20,12 +20,7 @@ public class PunchClockFacadeImpl implements PunchClockFacade {
 
     protected final Logger LOGGER = LogManager.getLogger( this.getClass().getName() );
 
-    private PersonBo authenticatedPerson;
-
     /* SERVICES */
-
-    @EJB
-    private PersonService personService;
 
     @EJB
     private TimePunchService timePunchService;
@@ -42,7 +37,7 @@ public class PunchClockFacadeImpl implements PunchClockFacade {
     @Override
     public void registerActivity(
             LocalDateTime start, LocalDateTime end,
-            String activity, ProjectBo project
+            String activity, ProjectBo project, PersonBo authenticatedPerson
     ) throws OutsideWorkdayTimeBoundariesException {
 
         LOGGER.traceEntry(

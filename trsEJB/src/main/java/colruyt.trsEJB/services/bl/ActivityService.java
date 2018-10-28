@@ -32,9 +32,6 @@ public class ActivityService {
         );
 
         // validate activity start & end (date/time) boundaries
-        if(true){
-            throw new OutsideWorkdayTimeBoundariesException();
-        }
 
         workActivityDlService.create(start, end, activity, project, authenticatedPerson);
 
