@@ -28,7 +28,7 @@ public class PunchClockFacadeImpl implements PunchClockFacade {
     // TODO: Inject
     private PersonService personService = PersonService.getService();
 
-    // TODO: Inject
+
     private TimePunchService timePunchService = TimePunchService.getService();
 
     private ActivityService activityService = ActivityService.getService();
