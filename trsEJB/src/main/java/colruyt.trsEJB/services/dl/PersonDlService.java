@@ -30,7 +30,7 @@ public class PersonDlService extends BaseDlService<Person> implements IBaseDlSer
 		super(entityManager);
 	}
 
-	public Optional<Person> getById(long id) {
+	public Optional<Person> getById(String id) {
 				
 		return Optional
 					.ofNullable(

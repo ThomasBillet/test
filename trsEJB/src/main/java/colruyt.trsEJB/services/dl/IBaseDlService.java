@@ -8,7 +8,7 @@ import java.util.Optional;
  */
 public interface IBaseDlService<T> {
 	
-	Optional<T> getById(long id);
+	Optional<T> getById(String id);
     
     List<T> getAll();
     
