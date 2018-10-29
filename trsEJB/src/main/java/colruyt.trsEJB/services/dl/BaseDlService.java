@@ -6,12 +6,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.util.List;
 import java.util.function.Consumer;
-import javax.persistence.PersistenceContext;
 
 
 public abstract class BaseDlService<T> implements IBaseDlService<T> {
 	
-        @PersistenceContext
+        
 	private EntityManager entityManager;
 
 	public BaseDlService(EntityManager entityManager) {

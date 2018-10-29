@@ -30,6 +30,7 @@ public class TimePunchService {
     private void addToWorkActivity(TimePunch p) {
         //Kijk of de working day al een Project van dit heeft met een lege ending
         // Anders gaan we deze Deze aanmaken
+        // Anders --> Check voor nieuwe WorkDayActivity (laaste met open ending)
        WorkDay day = this.getWorkingDayFor(p.getPerson());
         
        WorkActivity wa = day.getDayActivities().stream().filter(x-> x.getProject().equals(p.getProject()) && x.getStop() == null ).collect(Collectors.toList()).get(0);

@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
 import java.util.Optional;
 
 @Stateless
-@LocalBean
+
 public class PersonService {
 
     private static final Logger LOGGER = LogManager.getLogger( PersonService.class.getName() );

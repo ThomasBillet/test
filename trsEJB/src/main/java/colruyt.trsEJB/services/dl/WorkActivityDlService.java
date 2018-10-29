@@ -49,7 +49,7 @@ public class WorkActivityDlService extends BaseDlService<WorkActivity> {
             this.getEntityManager().getTransaction().begin();
             WorkActivity p = this.getEntityManager().find(WorkActivity.class, id);
             this.getEntityManager().getTransaction().commit();
-            this.getEntityManager().close();
+          
             
          return Optional.of(p);
             
@@ -71,6 +71,7 @@ public class WorkActivityDlService extends BaseDlService<WorkActivity> {
         try{
             
             this.getEntityManager().getTransaction().begin();
+            
             List<WorkActivity> listWorkActivity = this.getEntityManager().createQuery(
             "SELECT p FROM WorkActivity p").getResultList();
             this.getEntityManager().getTransaction().commit();

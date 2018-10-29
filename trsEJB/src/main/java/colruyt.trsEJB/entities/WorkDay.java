@@ -1,5 +1,7 @@
 package colruyt.trsEJB.entities;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -12,11 +14,8 @@ import javax.persistence.Table;
 @Entity
 public class WorkDay{
     
-    private TimePunch startPunch;
-
-    private TimePunch endPunch;
-    
-    
+   
+    private LocalDate date;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,21 +41,22 @@ public class WorkDay{
 
     /* GETTERS & SETTERS */
 
-    public TimePunch getStartPunch() {
-        return startPunch;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setStartPunch(TimePunch startPunch) {
-        this.startPunch = startPunch;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public TimePunch getEndPunch() {
-        return endPunch;
+    public String getId() {
+        return id;
     }
 
-    public void setEndPunch(TimePunch endPunch) {
-        this.endPunch = endPunch;
+    public void setId(String id) {
+        this.id = id;
     }
+     
 
     public List<WorkActivity> getDayActivities() {
         return dayActivities;
